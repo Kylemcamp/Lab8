@@ -2,9 +2,11 @@ package com.example.lab8;
 
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 //import org.junit.Before;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -28,4 +30,15 @@ public class CustomListTest {
         int expectedCountAfter = 1;
         assertEquals(expectedCountAfter, list.getCount(), "Count should have been 1");
     }
+
+    @Test
+    public void hasCityTest(){
+        CustomList list = mockCityList();
+        City testCity = new City("Regina", "SK");
+        Assertions.assertFalse(list.hasCity(testCity));
+        list.addCity(testCity);
+        Assertions.assertTrue(list.hasCity(testCity));
+    }
+
+
 }
