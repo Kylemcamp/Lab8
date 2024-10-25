@@ -55,7 +55,7 @@ public class CustomListTest {
     public void countCitiesTest(){
         CustomList list = mockCityList();
         int expectedCountBeforeAdd = 0;
-        assertEquals(expectedCountBeforeAdd, list.getCount(), "Count should have been 0");
+        assertEquals(expectedCountBeforeAdd, list.countCity(), "Count should have been 0");
         City city1 = new City("Nanton", "AB");
         City city2 = new City("Danton", "AB");
         City city3 = new City("Fanton", "AB");
@@ -66,6 +66,6 @@ public class CustomListTest {
         list.addCity(city4);
 
         int expectedCountAfter = 4;
-        assertEquals(expectedCountAfter, list.getCount(), "Count should have been 4");
+        assertEquals(expectedCountAfter, list.countCity(), "Count should have been 4");
     }
 }
