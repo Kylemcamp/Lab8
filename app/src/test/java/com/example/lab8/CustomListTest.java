@@ -50,4 +50,22 @@ public class CustomListTest {
         list.deleteCity(testCity);
     }
 
+
+    @Test
+    public void countCitiesTest(){
+        CustomList list = mockCityList();
+        int expectedCountBeforeAdd = 0;
+        assertEquals(expectedCountBeforeAdd, list.countCity(), "Count should have been 0");
+        City city1 = new City("Nanton", "AB");
+        City city2 = new City("Danton", "AB");
+        City city3 = new City("Fanton", "AB");
+        City city4 = new City("Manton", "AB");
+        list.addCity(city1);
+        list.addCity(city2);
+        list.addCity(city3);
+        list.addCity(city4);
+
+        int expectedCountAfter = 4;
+        assertEquals(expectedCountAfter, list.countCity(), "Count should have been 4");
+    }
 }
